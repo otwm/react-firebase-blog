@@ -23,7 +23,7 @@ class ArticleList extends Component {
       <PagingList
         list={articles}
         Template={ArticleTemplate}
-        currentPage={currentPage}
+        currentPage={Number(currentPage)}
       />
     )
   }
