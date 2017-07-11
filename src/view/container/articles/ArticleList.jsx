@@ -8,7 +8,7 @@ function ArticleTemplate({ id, title, modifier, creator }) {
   return (
     <div>
       <span>{id}</span>
-      <Link to={`/articles/{id}`} >
+      <Link to={`/articles/${id}`} >
         {title}
       </Link>
       <span>{writer}</span>
