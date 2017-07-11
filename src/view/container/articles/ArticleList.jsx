@@ -18,7 +18,7 @@ function ArticleTemplate({ id, title, modifier, creator }) {
 
 class ArticleList extends Component {
   render() {
-    const { currentPage } = this.props.location.query;
+    const { currentPage = 1 } = this.props.location.query;
     return (
       <PagingList
         list={articles}
