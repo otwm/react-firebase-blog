@@ -18,8 +18,13 @@ function ArticleTemplate({ id, title, modifier, creator }) {
 
 class ArticleList extends Component {
   render() {
+    const { currentPage } = this.props.location.query;
     return (
-      <PagingList list={articles} Template={ArticleTemplate} />
+      <PagingList
+        list={articles}
+        Template={ArticleTemplate}
+        currentPage={currentPage}
+      />
     )
   }
 }

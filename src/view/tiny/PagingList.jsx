@@ -8,7 +8,10 @@ function Pagination({ currentPage, maxPage }) {
     <div>
       {[...Array(maxPage).keys()].map(
         index =>
-          <div className={(currentPage === index + 1) ? 'current' : ''} >
+          <div
+            className={(currentPage === index + 1) ? 'current' : ''}
+            key={index}
+          >
             <Link to={`?currentPage=${index + 1}`} >{index + 1}</Link>
           </div>
       )}
