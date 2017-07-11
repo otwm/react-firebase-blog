@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
 import articles from 'core/article/data';
-import List from 'view/tiny/List';
+import PagingList from 'view/tiny/PagingList';
 
 function ArticleTemplate({ id, title, modifier, creator }) {
   const writer = modifier || creator;
@@ -19,7 +19,7 @@ function ArticleTemplate({ id, title, modifier, creator }) {
 class ArticleList extends Component {
   render() {
     return (
-      <List list={articles} Template={ArticleTemplate} />
+      <PagingList list={articles} Template={ArticleTemplate} />
     )
   }
 }
