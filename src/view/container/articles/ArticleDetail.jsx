@@ -4,15 +4,17 @@ import articles from 'core/article/data';
 
 class ArticleDetail extends Component {
   render() {
+    const { id } = this.props.params;
+    const article = articles.find(article => article.id === Number(id));
     const
-       {
+      {
         title,
         content,
         createDate,
         creator,
         modifiedDate,
         modifier,
-    } = articles[0];
+      } = article;
     return (
       <section>
         <article>
@@ -25,7 +27,7 @@ class ArticleDetail extends Component {
           <div>{modifiedDate}</div>
           <div>{modifier}</div>
         </article>
-        <Link to="/">목록으로</Link>
+        <Link to="/" >목록으로</Link>
       </section>
     )
   }

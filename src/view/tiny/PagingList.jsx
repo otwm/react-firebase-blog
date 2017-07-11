@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router';
 import List from './List';
 
@@ -30,5 +31,12 @@ function PagingList({ list, Template, dataPerPage = 10, currentPage = 1 }) {
     </section>
   );
 }
+
+PagingList.propTypes = {
+  list: PropTypes.arrayOf(PropTypes.object),
+  Template: PropTypes.func,
+  dataPerPage: PropTypes.number,
+  currentPage: PropTypes.number,
+};
 
 export default PagingList;
