@@ -1,13 +1,20 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
+import articles from 'core/article/data';
 
 class ArticleList extends Component {
-  render(){
+  render() {
     return (
       <ul>
-        <li><Link to="/articles/1">React Forever!</Link></li>
-        <li><Link to="/articles/2">Awesome Firebase!</Link></li>
-        <li><Link to="/articles/3">Good Redux!</Link></li>
+        {
+          articles.map(article =>
+            <li key={article.id} >
+              <Link to={`/articles/{article.id}`} >
+                {article.title}
+              </Link>
+            </li>
+          )
+        }
       </ul>
     )
   }
